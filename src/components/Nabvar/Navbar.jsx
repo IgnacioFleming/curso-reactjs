@@ -1,4 +1,4 @@
-import { Box, Grid, AppBar, Toolbar } from "@mui/material";
+import { Box, Grid, AppBar } from "@mui/material";
 import CartWidget from "../CartWidget/CartWidget";
 import React from "react";
 
