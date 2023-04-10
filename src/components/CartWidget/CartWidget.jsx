@@ -22,7 +22,7 @@ const CartWidget = () => {
             width: "10px",
           }}
         >
-          0
+          <span>0</span>
         </div>
       </Box>
     </>
