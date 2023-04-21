@@ -1,9 +1,10 @@
 import React from "react";
+import ItemCard from "./ItemCard";
 
-const ItemList = ({ greeting }) => {
+const ItemList = () => {
   return (
     <div>
-      <h4 style={{ textAlign: "center", marginTop: "50px" }}>{greeting}</h4>
+      <ItemCard />
     </div>
   );
 };
