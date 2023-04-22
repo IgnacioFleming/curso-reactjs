@@ -14,13 +14,10 @@ function App() {
           <Routes>
             <Route element={<Navbar />}>
               <Route path="/" element={<ItemListConteiner />} />
-              <Route path="/computacion" element={<ItemListConteiner />} />
-              <Route path="/muebles" element={<ItemListConteiner />} />
               <Route
-                path="/sistemas-de-monitoreo"
+                path="/category/:categoryName"
                 element={<ItemListConteiner />}
               />
-              <Route path="/equipamiento" element={<ItemListConteiner />} />
             </Route>
             <Route
               path="*"
