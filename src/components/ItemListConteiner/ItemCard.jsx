@@ -8,28 +8,46 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const ItemCard = () => {
+const ItemCard = ({ item }) => {
   return (
-    <Card sx={{ maxWidth: 345, padding: "10px" }}>
+    <Card sx={{ maxWidth: 300, padding: "10px" }}>
       <CardMedia
         component="img"
         alt="item"
-        height="100%"
-        image="https://res.cloudinary.com/dah7yxmc5/image/upload/v1682119671/D_NQ_NP_977568-MLA45597561768_042021-O_e0atif.webp"
-        sx={{ objectFit: "contain", width: "100%" }}
+        image={item.img}
+        sx={{
+          width: "100%",
+          height: "50%",
+          objectFit: "contain",
+          maxHeight: 250,
+        }}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+      <CardContent
+        sx={{
+          height: 150,
+        }}
+      >
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{ height: "25%" }}
+        >
+          {item.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ marginTop: 5 }}
+        >
+          {item.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" variant="contained">
+          Detalle
+        </Button>
       </CardActions>
     </Card>
   );
