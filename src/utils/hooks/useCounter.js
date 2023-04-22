@@ -1,0 +1,15 @@
+import { useState } from "react";
+
+const useCounter = (initial) => {
+  const [counter, setCounter] = useState(initial);
+  const agregar = () => setCounter(counter + 1);
+  const quitar = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
+  const reset = () => setCounter(initial);
+  return { counter, agregar, quitar, reset };
+};
+
+export default useCounter;

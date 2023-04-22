@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import axios from "axios";
 import { products } from "../../products.js";
 import { useParams } from "react-router-dom";
 
-const ItemListConteiner = () => {
+const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   const { categoryName } = useParams();
+  const { itemId } = useParams();
   console.log(items);
+  console.log(itemId);
   console.log(categoryName);
 
   useEffect(() => {
-    const productsCategory = products.filter(
-      (item) => item.category == categoryName
+    const productsFiltered = products.filter(
+      (item) => item.category === categoryName
     );
+    const itemFiletered = products.filter((item) => item.id == itemId);
     console.log(categoryName);
-    console.log(productsCategory);
+    console.log(productsFiltered);
     const getProducts = new Promise((resolve, reject) => {
-      resolve(categoryName ? productsCategory : products);
+      if (categoryName) {
+        resolve(productsFiltered);
+      } else if (itemId) {
+        resolve(itemFiletered);
+      } else {
+        resolve(products);
+      }
     });
     getProducts.then((res) => setItems(res)).catch((err) => console.log(err));
-  }, [categoryName]);
+  }, [categoryName, itemId]);
 
   return (
     <>
@@ -30,4 +38,4 @@ const ItemListConteiner = () => {
   );
 };
 
-export default ItemListConteiner;
+export default ItemListContainer;

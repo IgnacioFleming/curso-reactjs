@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Nabvar/Navbar.jsx";
-import ItemListConteiner from "./components/ItemListConteiner/ItemListConteiner";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./components/ThemeConfig/ThemeConfig";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,11 +13,12 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route element={<Navbar />}>
-              <Route path="/" element={<ItemListConteiner />} />
+              <Route path="/" element={<ItemListContainer />} />
               <Route
                 path="/category/:categoryName"
-                element={<ItemListConteiner />}
+                element={<ItemListContainer />}
               />
+              <Route path="/item/:itemId" element={<ItemListContainer />} />
             </Route>
             <Route
               path="*"
