@@ -7,12 +7,9 @@ const ItemDetailContainer = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState([]);
 
-  console.log(itemId);
-  console.log(item);
   useEffect(() => {
-    const itemFiltered = products.filter((item) => item.id === Number(itemId));
-    console.log("hola");
-    console.log(itemFiltered);
+    const itemFiltered = products.find((item) => item.id === Number(itemId));
+
     const getItem = new Promise((resolve, reject) => {
       resolve(itemFiltered);
     });
