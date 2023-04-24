@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import { ThemeProvider } from "@emotion/react";
 import theme from "./components/ThemeConfig/ThemeConfig";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
                 path="/category/:categoryName"
                 element={<ItemListContainer />}
               />
-              <Route path="/item/:itemId" element={<ItemListContainer />} />
+              <Route
+                path="/itemDetail/:itemId"
+                element={<ItemDetailContainer />}
+              />
             </Route>
             <Route
               path="*"
