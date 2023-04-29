@@ -57,7 +57,7 @@ const ItemDetail = ({ item }) => {
                 gutterBottom
                 variant="h3"
                 component="div"
-                sx={{ width: "100%", marginBottom: 10 }}
+                sx={{ width: "100%", marginBottom: 5, textAlign: "center" }}
               >
                 {item.title}
               </Typography>
@@ -65,7 +65,7 @@ const ItemDetail = ({ item }) => {
               <Typography
                 variant="body1"
                 color="text.secondary"
-                sx={{ marginBottom: 10 }}
+                sx={{ marginBottom: 5, textAlign: "center" }}
               >
                 {item.description}
               </Typography>
@@ -78,10 +78,23 @@ const ItemDetail = ({ item }) => {
                   width: "100%",
                   textAlign: "center",
                   height: "10%",
-                  marginTop: 1,
+                  marginBottom: 5,
                 }}
               >
                 Precio: ${item.price}
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="h6"
+                component="div"
+                sx={{
+                  width: "100%",
+                  textAlign: "center",
+                  height: "10%",
+                  marginBottom: 5,
+                }}
+              >
+                Stock disponible: {item.stock}
               </Typography>
             </CardContent>
 

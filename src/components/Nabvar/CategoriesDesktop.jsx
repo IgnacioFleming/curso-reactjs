@@ -13,6 +13,7 @@ export const CategoriesDesktop = () => {
     <Grid container sx={{ justifyContent: "center" }}>
       <Grid item xs={2} sx={alignment}>
         <Typography
+          variant="h6"
           onClick={() => navigate("/")}
           sx={{ cursor: "pointer" }}
           align="center"
@@ -22,6 +23,7 @@ export const CategoriesDesktop = () => {
       </Grid>
       <Grid item xs={2} sx={alignment}>
         <Typography
+          variant="h6"
           align="center"
           onClick={() => navigate("/category/computacion")}
           sx={{ cursor: "pointer" }}
@@ -31,6 +33,7 @@ export const CategoriesDesktop = () => {
       </Grid>
       <Grid item xs={2} sx={alignment}>
         <Typography
+          variant="h6"
           onClick={() => navigate("/category/muebles")}
           sx={{ cursor: "pointer" }}
           align="center"
@@ -40,6 +43,7 @@ export const CategoriesDesktop = () => {
       </Grid>
       <Grid item xs={2} sx={alignment}>
         <Typography
+          variant="h6"
           onClick={() => navigate("/category/sistemas-de-monitoreo")}
           sx={{ cursor: "pointer" }}
           align="center"
@@ -49,6 +53,7 @@ export const CategoriesDesktop = () => {
       </Grid>
       <Grid item xs={2} sx={alignment}>
         <Typography
+          variant="h6"
           onClick={() => navigate("/category/equipamiento")}
           sx={{ cursor: "pointer" }}
           align="center"
