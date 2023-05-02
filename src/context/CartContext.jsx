@@ -5,8 +5,25 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const addToCart = (producto) => {
+    let existe = isInCart(producto.id);
+    if (existe) {
+      let newCart = cart.map((e) => {
+        if (e.id === producto.id) {
+          return { ...e, quantity: producto.quantity + e.quantity };
+        } else {
+          return e;
+        }
+        setCart(newCart);
+      });
+    }
     setCart([...cart, producto]);
   };
+
+  const isInCart = (id) => {
+    let existe = cart.some((e) => e.id === id);
+    return existe;
+  };
+
   const deleteFromCart = (id) => {
     let newCart = [];
     cart.map((e) => {
