@@ -11,9 +11,6 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
-  const { itemId } = useParams();
-
-  console.log(itemId);
   return (
     <Card sx={{ maxWidth: 300, padding: "10px" }}>
       <CardMedia

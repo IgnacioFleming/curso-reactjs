@@ -14,9 +14,24 @@ import { RxCounterClockwiseClock } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import useCounter from "../../utils/hooks/useCounter";
 
-const Cart = () => {
+const Cart = ({ cart, deleteFromCart }) => {
   //   const { counter, agregar, quitar, reset } = useCounter(0);
-  return <div>Carrito</div>;
+  return (
+    <div>
+      {cart.map((e) => {
+        console.log(cart);
+        return (
+          <div key={e.id} style={{ border: "solid 1px black" }}>
+            <h1>{e.title}</h1>
+            <h2>{e.quantity}</h2>
+            <Button variant="contained" onClick={() => deleteFromCart(e.id)}>
+              Eliminar
+            </Button>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Cart;
