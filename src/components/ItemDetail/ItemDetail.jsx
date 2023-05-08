@@ -13,6 +13,7 @@ import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 import useCounter from "../../utils/hooks/useCounter.js";
 import { Link } from "react-router-dom";
+import CounterContainer from "../Counter/CounterContainer.jsx";
 const cardActionsStyle = {
   display: "flex",
   width: "100%",
@@ -21,7 +22,6 @@ const cardActionsStyle = {
 };
 
 const ItemDetail = ({ item, onAdd }) => {
-  const { counter, agregar, quitar, reset } = useCounter(0);
   return (
     <div style={{ display: "flex", justifyContent: "center" }} key={item.id}>
       <Card
@@ -97,36 +97,8 @@ const ItemDetail = ({ item, onAdd }) => {
                 Stock disponible: {item.stock}
               </Typography>
             </CardContent>
-
             <CardActions sx={cardActionsStyle}>
-              <Button onClick={quitar}>
-                <AiOutlineMinusSquare size={20} />
-              </Button>
-              <Box sx={{ marginLeft: 1 }}>{counter}</Box>
-              <Button onClick={() => agregar(item)}>
-                <AiOutlinePlusSquare size={20} />
-              </Button>
-              <Button onClick={reset}>
-                <RxCounterClockwiseClock size={20} />
-              </Button>
-            </CardActions>
-            <CardActions sx={cardActionsStyle}>
-              <Button
-                sx={{ marginRight: 1 }}
-                size="small"
-                variant="contained"
-                onClick={() => {
-                  onAdd(counter);
-                }}
-              >
-                Agregar al Carrito
-              </Button>
-
-              <Link to={`/`}>
-                <Button size="small" variant="contained">
-                  Volver
-                </Button>
-              </Link>
+              <CounterContainer stock={item.stock} onAdd={onAdd} />
             </CardActions>
           </Grid>
         </Grid>
