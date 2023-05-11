@@ -5,6 +5,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Divider,
   Grid,
   Paper,
   Stack,
@@ -24,8 +25,9 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Cart = ({ cart, deleteFromCart }) => {
+const Cart = ({ cart, deleteFromCart, totalAmount }) => {
   //   const { counter, agregar, quitar, reset } = useCounter(0);
+
   return (
     <div style={{ display: "flex", justifyItems: "center" }}>
       <Stack
@@ -42,18 +44,24 @@ const Cart = ({ cart, deleteFromCart }) => {
         {cart.map((e) => {
           console.log(cart);
           return (
-            <Item sx={{ width: "80%", height: 150 }} elevation={5}>
+            <Item
+              sx={{
+                width: "80%",
+                height: 150,
+                display: "flex",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+              }}
+              elevation={5}
+            >
               <Grid container>
-                <Grid
-                  item
-                  md={1}
-                  sx={{ display: "flex", alignItems: "center" }}
-                >
+                <Grid item md={1}>
                   <img
                     style={{
                       height: "80%",
                       width: "80%",
                       objectFit: "contain",
+                      paddingLeft: 100,
                     }}
                     src={e.img}
                   />
@@ -63,21 +71,12 @@ const Cart = ({ cart, deleteFromCart }) => {
                   md={5}
                   sx={{
                     display: "flex",
-                    flexDirection: "column",
+                    justifyContent: "center",
                     alignItems: "center",
-                    gap: 3,
                   }}
                 >
-                  <Typography gutterBottom mt={5} variant="h5" color="initial">
+                  <Typography gutterBottom variant="h5" color="initial">
                     {e.title}
-                  </Typography>
-                  <Typography
-                    paragraph
-                    variant="subtitle2"
-                    color="initial"
-                    sx={{ width: "90%" }}
-                  >
-                    {e.description}
                   </Typography>
                 </Grid>
                 <Grid
@@ -88,8 +87,6 @@ const Cart = ({ cart, deleteFromCart }) => {
                     flexDirection: "column",
                     justifyContent: "center",
                     gap: 1,
-                    alignItems: "flex-start",
-                    paddingLeft: 6,
                   }}
                 >
                   <Typography
@@ -111,7 +108,7 @@ const Cart = ({ cart, deleteFromCart }) => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    alignItems: "flex-start",
+
                     gap: 1,
                   }}
                 >
@@ -143,6 +140,12 @@ const Cart = ({ cart, deleteFromCart }) => {
             </Item>
           );
         })}
+
+        <Box sx={{ width: "80%", borderTop: "2px solid #B4B0B0" }}>
+          <Typography variant="h4" color="initial">
+            Total : {totalAmount}
+          </Typography>
+        </Box>
       </Stack>
     </div>
   );

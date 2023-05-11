@@ -33,7 +33,13 @@ const CartContextProvider = ({ children }) => {
     });
     setCart(newCart);
   };
-  let data = { addToCart, deleteFromCart, cart };
+  const cartAmount = () => {
+    let totalAmount = cart.reduce((acc, e) => {
+      return acc + e.quantity * e.price;
+    }, 0);
+    return totalAmount;
+  };
+  let data = { addToCart, deleteFromCart, cart, cartAmount };
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 
