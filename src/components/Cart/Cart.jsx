@@ -61,16 +61,22 @@ const Cart = ({ cart, deleteFromCart, totalAmount }) => {
               elevation={5}
             >
               <Grid container>
-                <Grid item md={1}>
-                  <img
-                    style={{
-                      height: "80%",
-                      width: "80%",
-                      objectFit: "contain",
-                      paddingLeft: 100,
-                    }}
-                    src={e.img}
-                  />
+                <Grid
+                  item
+                  md={1}
+                  sx={{ display: "flex", alignItems: "center" }}
+                >
+                  <Box sx={{ height: "80%", width: "80%" }}>
+                    <img
+                      style={{
+                        maxHeight: "100%",
+                        maxWidth: "100%",
+                        objectFit: "contain",
+                        paddingLeft: 100,
+                      }}
+                      src={e.img}
+                    />
+                  </Box>
                 </Grid>
                 <Grid
                   item
@@ -157,10 +163,12 @@ const Cart = ({ cart, deleteFromCart, totalAmount }) => {
         <Divider variant="fullWidth"></Divider>
         <Box sx={{ ...boxStyle, gap: 2 }}>
           <Link to="/">
-            <Button variant="contained">Volver</Button>
+            <Button size="large" variant="contained">
+              Volver
+            </Button>
           </Link>
           <Link to="/checkout">
-            <Button variant="contained" to="/checkout">
+            <Button size="large" variant="contained" to="/checkout">
               Terminar Compra
             </Button>
           </Link>

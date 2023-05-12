@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box } from "@mui/material";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const boxStyle = {
   display: "flex",
@@ -26,12 +27,14 @@ const counterStyle = {
 };
 
 const CartWidget = () => {
+  const { cartQuantity } = useContext(CartContext);
   const navigate = useNavigate();
+  let cantidad = cartQuantity();
   return (
     <Box sx={boxStyle} onClick={() => navigate("/cart")}>
       <RiShoppingCartLine size={25} />
 
-      <span style={counterStyle}>0</span>
+      <span style={counterStyle}>{cantidad || 0}</span>
     </Box>
   );
 };

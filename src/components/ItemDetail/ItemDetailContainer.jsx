@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
 
   const onAdd = (cantidad) => {
     let data = { ...item, quantity: cantidad };
-    addToCart(data);
+    cantidad > 0 && addToCart(data);
   };
 
   return (

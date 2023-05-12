@@ -13,10 +13,11 @@ const CartContextProvider = ({ children }) => {
         } else {
           return e;
         }
-        setCart(newCart);
       });
+      setCart(newCart);
+    } else {
+      setCart([...cart, producto]);
     }
-    setCart([...cart, producto]);
   };
 
   const isInCart = (id) => {
@@ -39,7 +40,14 @@ const CartContextProvider = ({ children }) => {
     }, 0);
     return totalAmount;
   };
-  let data = { addToCart, deleteFromCart, cart, cartAmount };
+
+  const cartQuantity = () => {
+    let itemsQuantity = cart.reduce((acc, e) => {
+      return acc + e.quantity;
+    }, 0);
+    return itemsQuantity;
+  };
+  let data = { addToCart, deleteFromCart, cart, cartAmount, cartQuantity };
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 

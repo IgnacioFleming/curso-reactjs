@@ -10,6 +10,7 @@ const ItemList = ({ items }) => {
         gap: "20px",
         padding: "20px",
         justifyContent: "center",
+        marginTop: 50,
       }}
     >
       {items.map((item) => {
