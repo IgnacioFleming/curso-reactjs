@@ -23,11 +23,16 @@ const boxStyle = {
   paddingTop: 5,
   paddingBottom: 5,
   display: "flex",
-  justifyContent: "flex-end",
-  width: "90%",
 };
 
 const Cart = ({ cart, deleteFromCart, totalAmount }) => {
+  if (cart.length == 0) {
+    boxStyle.justifyContent = "center";
+    boxStyle.width = "100%";
+  } else {
+    boxStyle.justifyContent = "flex-end";
+    boxStyle.width = "80%";
+  }
   return (
     <div
       style={{
@@ -154,22 +159,39 @@ const Cart = ({ cart, deleteFromCart, totalAmount }) => {
         })}
       </Stack>
       <List sx={{ width: "80%" }}>
-        <Divider variant="fullWidth"></Divider>
-        <Box sx={boxStyle}>
-          <Typography variant="h4" color="initial">
-            Total : {totalAmount}
-          </Typography>
-        </Box>
-        <Divider variant="fullWidth"></Divider>
+        {cart.length > 0 && (
+          <>
+            <Divider variant="fullWidth"></Divider>
+            <Box sx={boxStyle}>
+              <Typography variant="h4" color="initial">
+                Total : {totalAmount}
+              </Typography>
+            </Box>
+            <Divider variant="fullWidth"></Divider>
+          </>
+        )}
+        {cart.length == 0 && (
+          <>
+            <Box sx={boxStyle}>
+              <Typography variant="h4" color="initial">
+                Aún no agregaste productos al Carrito
+              </Typography>
+            </Box>
+          </>
+        )}
         <Box sx={{ ...boxStyle, gap: 2 }}>
+          {cart.length > 0 && (
+            <>
+              <Link to="/checkout">
+                <Button size="large" variant="contained" to="/checkout">
+                  Terminar Compra
+                </Button>
+              </Link>
+            </>
+          )}
           <Link to="/">
             <Button size="large" variant="contained">
               Volver
-            </Button>
-          </Link>
-          <Link to="/checkout">
-            <Button size="large" variant="contained" to="/checkout">
-              Terminar Compra
             </Button>
           </Link>
         </Box>

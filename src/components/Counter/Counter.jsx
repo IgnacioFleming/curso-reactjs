@@ -11,8 +11,8 @@ const counterStyles = {
   marginBottom: 20,
 };
 
-const Counter = ({ stock, onAdd }) => {
-  const { counter, agregar, quitar, reset } = useCounter(0);
+const Counter = ({ stock, onAdd, initial = 1 }) => {
+  const { counter, agregar, quitar, reset } = useCounter(initial);
   return (
     <Grid container>
       <Grid item xs={12}>

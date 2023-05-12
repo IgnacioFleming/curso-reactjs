@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import Checkout from "./Checkout";
+import { CartContext } from "../../context/CartContext";
 
 const CheckoutContainer = () => {
-  return <CheckoutContainer />;
+  const { cart } = useContext(CartContext);
+  return <Checkout cart={cart} />;
 };
 
 export default CheckoutContainer;

@@ -7,7 +7,7 @@ import { CartContext } from "../../context/CartContext";
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState([]);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, getCartQuantity } = useContext(CartContext);
 
   useEffect(() => {
     const itemFiltered = products.find((item) => item.id === Number(itemId));
@@ -19,9 +19,11 @@ const ItemDetailContainer = () => {
     cantidad > 0 && addToCart(data);
   };
 
+  let cantidad = getCartQuantity(item.id);
+
   return (
     <>
-      <ItemDetail item={item} onAdd={onAdd} />
+      <ItemDetail item={item} onAdd={onAdd} cantidad={cantidad} />
     </>
   );
 };

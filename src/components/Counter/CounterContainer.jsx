@@ -1,9 +1,8 @@
 import React from "react";
 import Counter from "./Counter";
 
-const CounterContainer = ({ stock, onAdd }) => {
-  console.log(stock);
-  return <Counter stock={stock} onAdd={onAdd} />;
+const CounterContainer = ({ stock, onAdd, initial }) => {
+  return <Counter stock={stock} onAdd={onAdd} initial={initial} />;
 };
 
 export default CounterContainer;
