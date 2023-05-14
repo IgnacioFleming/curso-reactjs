@@ -3,8 +3,8 @@ import Checkout from "./Checkout";
 import { CartContext } from "../../context/CartContext";
 
 const CheckoutContainer = () => {
-  const { cart } = useContext(CartContext);
-  return <Checkout cart={cart} />;
+  const { cart, cartAmount } = useContext(CartContext);
+  return <Checkout cart={cart} cartAmount={cartAmount} />;
 };
 
 export default CheckoutContainer;
