@@ -1,15 +1,19 @@
 import {
   Avatar,
   Box,
+  Button,
   Divider,
   Grid,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText,
+  TextField,
   Typography,
 } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
+import FormCheckoutContainer from "../FormCheckout/FormCheckoutContainer";
 
 const Checkout = ({ cart, cartAmount }) => {
   const total = cartAmount();
@@ -86,26 +90,15 @@ const Checkout = ({ cart, cartAmount }) => {
             <div
               style={{
                 width: "2px",
-                height: "80%",
-
+                height: "90%",
+                minHeight: "500px",
                 backgroundColor: "#ccc",
               }}
             ></div>
           </Box>
         </Grid>
         <Grid item md={6}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography variant="h5" mt={11} color="initial">
-              Por favor completá tus datos para continuar
-            </Typography>
-            <form></form>
-          </Box>
+          <FormCheckoutContainer />
         </Grid>
       </Grid>
     </div>
