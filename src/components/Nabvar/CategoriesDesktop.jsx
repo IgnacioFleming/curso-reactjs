@@ -1,9 +1,8 @@
-import { LibraryAdd } from "@mui/icons-material";
 import { Grid, Typography } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
 import React from "react";
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { db } from "../../firebaseConfig";
 import { useState } from "react";
 const alignment = {

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-// import { products } from "../../productsMock.js";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { TailSpin } from "react-loader-spinner";
+import theme from "../ThemeConfig/ThemeConfig";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -34,7 +35,24 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <ItemList items={items} />
+      {items.length === 0 ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <TailSpin
+            height="120"
+            width="120"
+            color="black"
+            ariaLabel="tail-spin-loading"
+            wrapperStyle={{ paddingTop: 200 }}
+          />
+        </div>
+      ) : (
+        <ItemList items={items} />
+      )}
     </>
   );
 };

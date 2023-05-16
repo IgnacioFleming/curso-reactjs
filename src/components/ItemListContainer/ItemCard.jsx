@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
   return (

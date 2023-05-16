@@ -1,6 +1,4 @@
 import {
-  Box,
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -9,10 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
-import { RxCounterClockwiseClock } from "react-icons/rx";
-import useCounter from "../../utils/hooks/useCounter.js";
-import { Link } from "react-router-dom";
 import CounterContainer from "../Counter/CounterContainer.jsx";
 const cardActionsStyle = {
   display: "flex",

@@ -1,18 +1,15 @@
 import {
   Avatar,
   Box,
-  Button,
   Divider,
   Grid,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText,
-  TextField,
   Typography,
 } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
 import FormCheckoutContainer from "../FormCheckout/FormCheckoutContainer";
 
 const Checkout = ({ cart, cartAmount }) => {
