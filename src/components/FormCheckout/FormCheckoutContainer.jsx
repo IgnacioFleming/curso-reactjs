@@ -21,17 +21,21 @@ const FormCheckoutContainer = () => {
       apellido: Yup.string()
         .required("Este campo es obligatorio")
         .max(20, "El nombre debe tener como máximo 20 caracteres"),
-      telefono: Yup.number("Este campo debe ser numérico").max(
-        15,
-        "El telefono debe tener 15 caracteres como máximo"
-      ),
+      telefono: Yup.number()
+        .max(
+          1000000000000000,
+          "El telefono debe tener 15 caracteres como máximo"
+        )
+        .typeError("Debe ingresar un número")
+        .required("Este campo es obligatorio"),
       email: Yup.string()
         .required("Este campo es obligatorio")
         .email("Este campo debe ser un email"),
       confirmarEmail: Yup.string()
         .required("Este campo es obligatorio")
-        .oneOf(Yup.ref("email"), "Los correos no coinciden"),
+        .oneOf([Yup.ref("email")], "Los correos no coinciden"),
     }),
+
     validateOnChange: false,
   });
 

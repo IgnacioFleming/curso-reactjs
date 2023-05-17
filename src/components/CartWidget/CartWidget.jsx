@@ -31,11 +31,15 @@ const CartWidget = () => {
   const navigate = useNavigate();
   let cantidad = cartQuantity();
   return (
-    <Box sx={boxStyle} onClick={() => navigate("/cart")}>
-      <RiShoppingCartLine size={25} />
+    <>
+      {cantidad > 0 && (
+        <Box sx={boxStyle} onClick={() => navigate("/cart")}>
+          <RiShoppingCartLine size={25} />
 
-      <span style={counterStyle}>{cantidad || 0}</span>
-    </Box>
+          <span style={counterStyle}>{cantidad || 0}</span>
+        </Box>
+      )}
+    </>
   );
 };
 

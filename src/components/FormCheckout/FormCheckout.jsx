@@ -1,4 +1,5 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
+import { ErrorMessage } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,9 @@ const FormCheckout = ({ handleSubmit, handleChange, values, errors }) => {
           label="Nombre"
           variant="outlined"
           onChange={handleChange}
+          value={values.nombre}
+          error={errors.nombre ? true : null}
+          helperText={errors.nombre}
         />
         <TextField
           fullWidth
@@ -38,6 +42,9 @@ const FormCheckout = ({ handleSubmit, handleChange, values, errors }) => {
           label="Apellido"
           variant="outlined"
           onChange={handleChange}
+          value={values.apellido}
+          error={errors.apellido ? true : false}
+          helperText={errors.apellido}
         />
         <TextField
           fullWidth
@@ -45,6 +52,9 @@ const FormCheckout = ({ handleSubmit, handleChange, values, errors }) => {
           label="Teléfono"
           variant="outlined"
           onChange={handleChange}
+          value={values.telefono}
+          error={errors.telefono ? true : false}
+          helperText={errors.telefono}
         />
         <TextField
           fullWidth
@@ -52,14 +62,22 @@ const FormCheckout = ({ handleSubmit, handleChange, values, errors }) => {
           label="Email"
           variant="outlined"
           onChange={handleChange}
+          value={values.email}
+          error={errors.email ? true : false}
+          helperText={errors.email}
         />
-        <TextField
-          fullWidth
-          name="confirmarEmail"
-          label="Confirmar Email"
-          variant="outlined"
-          onChange={handleChange}
-        />
+        {values.email.length > 0 && (
+          <TextField
+            fullWidth
+            name="confirmarEmail"
+            label="Confirmar Email"
+            variant="outlined"
+            onChange={handleChange}
+            value={values.confirmarEmail}
+            error={errors.confirmarEmail ? true : false}
+            helperText={errors.confirmarEmail}
+          />
+        )}
         <Box sx={{ display: "flex", justifyContent: "center", gap: 5 }}>
           <Button type="submit" variant="contained">
             Finalizar Compra
