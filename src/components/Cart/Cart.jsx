@@ -63,6 +63,7 @@ const Cart = ({ cart, deleteFromCart, totalAmount }) => {
                 justifyContent: "space-evenly",
                 alignItems: "center",
               }}
+              key={e.id}
               elevation={5}
             >
               <Grid container>

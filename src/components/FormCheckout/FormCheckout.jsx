@@ -2,7 +2,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const FormCheckout = ({ handleSubmit }) => {
+const FormCheckout = ({ handleSubmit, handleChange, values, errors }) => {
   return (
     <Box
       sx={{
@@ -25,25 +25,40 @@ const FormCheckout = ({ handleSubmit }) => {
           marginBottom: 20,
         }}
       >
-        <TextField fullWidth id="name" label="Nombre" variant="outlined" />
         <TextField
           fullWidth
-          name="last-name"
+          name="nombre"
+          label="Nombre"
+          variant="outlined"
+          onChange={handleChange}
+        />
+        <TextField
+          fullWidth
+          name="apellido"
           label="Apellido"
           variant="outlined"
+          onChange={handleChange}
         />
         <TextField
           fullWidth
-          name="phone-number"
+          name="telefono"
           label="Teléfono"
           variant="outlined"
+          onChange={handleChange}
         />
-        <TextField fullWidth name="email" label="Email" variant="outlined" />
         <TextField
           fullWidth
-          name="repeat-email"
+          name="email"
+          label="Email"
+          variant="outlined"
+          onChange={handleChange}
+        />
+        <TextField
+          fullWidth
+          name="confirmarEmail"
           label="Confirmar Email"
           variant="outlined"
+          onChange={handleChange}
         />
         <Box sx={{ display: "flex", justifyContent: "center", gap: 5 }}>
           <Button type="submit" variant="contained">
