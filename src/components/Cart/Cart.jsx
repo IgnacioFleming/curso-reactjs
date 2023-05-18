@@ -25,7 +25,7 @@ const boxStyle = {
   display: "flex",
 };
 
-const Cart = ({ cart, deleteFromCart, totalAmount }) => {
+const Cart = ({ cart, deleteFromCart, totalAmount, setCartEmpty }) => {
   if (cart.length == 0) {
     boxStyle.justifyContent = "center";
     boxStyle.width = "100%";
@@ -184,10 +184,14 @@ const Cart = ({ cart, deleteFromCart, totalAmount }) => {
           {cart.length > 0 && (
             <>
               <Link to="/checkout">
-                <Button size="large" variant="contained" to="/checkout">
+                <Button size="large" variant="contained">
                   Terminar Compra
                 </Button>
               </Link>
+
+              <Button size="large" variant="contained" onClick={setCartEmpty}>
+                Vaciar Carrito
+              </Button>
             </>
           )}
           <Link to="/">

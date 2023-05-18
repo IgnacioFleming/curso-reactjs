@@ -3,7 +3,8 @@ import Cart from "./Cart";
 import { CartContext } from "../../context/CartContext";
 
 const CartContainer = () => {
-  const { cart, deleteFromCart, cartAmount } = useContext(CartContext);
+  const { cart, deleteFromCart, cartAmount, setCartEmpty } =
+    useContext(CartContext);
   let totalAmount = cartAmount();
 
   return (
@@ -11,6 +12,7 @@ const CartContainer = () => {
       cart={cart}
       deleteFromCart={deleteFromCart}
       totalAmount={totalAmount}
+      setCartEmpty={setCartEmpty}
     />
   );
 };

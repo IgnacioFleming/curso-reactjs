@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FormCheckout from "./FormCheckout";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-const FormCheckoutContainer = () => {
+
+const FormCheckoutContainer = ({ completePurchase }) => {
   const { handleChange, handleSubmit, values, errors } = useFormik({
     initialValues: {
       nombre: "",
@@ -11,9 +12,7 @@ const FormCheckoutContainer = () => {
       email: "",
       confirmarEmail: "",
     },
-    onSubmit: (data) => {
-      console.log(data);
-    },
+    onSubmit: completePurchase,
     validationSchema: Yup.object().shape({
       nombre: Yup.string()
         .required("Este campo es obligatorio")
