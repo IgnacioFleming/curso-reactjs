@@ -18,18 +18,26 @@ Para esto debes seguir los siguientes pasos:
 - ### Clonar el proyecto:
 
   Para clonar el proyecto debes instalar y abrir Git Bash en tu computadora, y pegar el siguiente comando:
-  `git clone https://github.com/IgnacioFleming/curso-reactjs`
+
+  ```
+  git clone https://github.com/IgnacioFleming/curso-reactjs
+  ```
 
 - ### Instalar dependencias:
 
   Para instalar las dependencias deberas abrir una terminal de consola y ejectuar:
 
-  `npm install`
+  ```
+  npm install
+  ```
 
 - ### Levantar el proyecto localmente:
 
   Finalmente deberas ejecutar en la consola el siguiente comando:
-  `npm run start`
+
+  ```
+  npm run start
+  ```
 
   Y listo! El proyecto estará corriendo en localhost:3000
 
