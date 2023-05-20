@@ -35,41 +35,41 @@ Para esto debes seguir los siguientes pasos:
 
 ## Dependencias
 
-    Para este proyecto utilicé las siguientes librerías:
+Para este proyecto utilicé las siguientes librerías:
 
-    - Material UI:
+- Material UI:
 
-    Esta librería es muy potente a la hora de estilar los distintos componentes del sitio.
+  Esta librería es muy potente a la hora de estilar los distintos componentes del sitio.
 
-    Utilice la función createTheme para darle un formato personalizado a todo el sitio y que no quede el tema por defecto.
+  Utilice la función createTheme para darle un formato personalizado a todo el sitio y que no quede el tema por defecto.
 
-    - Firebase:
+- Firebase:
 
-    Instalé la librería de Firebase para poder conectar mi proyecto a mi propia Firestore y poder interactuar con el back end provisto por el mismo.
+  Instalé la librería de Firebase para poder conectar mi proyecto a mi propia Firestore y poder interactuar con el back end provisto por el mismo.
 
-    - Formik y Yup:
+- Formik y Yup:
 
-    Use estas dos librerías que son complementarias a la hora de manejar los formularios y realizar validaciones sobre el mismo.
+  Use estas dos librerías que son complementarias a la hora de manejar los formularios y realizar validaciones sobre el mismo.
 
-    - React Icons:
+- React Icons:
 
-    La utilice para el CartWidget y los botones del Counter.
+  La utilice para el CartWidget y los botones del Counter.
 
-    - React Loader Spinner:
+- React Loader Spinner:
 
-    Implementé esta librería para poder mostrar un loader que ayude a la pagina a transicionar mejor a la hora de las peticiones al back end.
+  Implementé esta librería para poder mostrar un loader que ayude a la pagina a transicionar mejor a la hora de las peticiones al back end.
 
-    - React Router Dom:
+- React Router Dom:
 
-    Instale la misma para poder armar el enrutado del sitio.
+  Instale la misma para poder armar el enrutado del sitio.
 
-    - Sweet Alert 2:
+- Sweet Alert 2:
 
-    La usé para agregar un alert más estetico a la hora de agregar productos al carrito.
+  La usé para agregar un alert más estetico a la hora de agregar productos al carrito.
 
 ## Demo
 
-    Les dejo un GIF mostrando el funcionamiento del ecommerce.
+Les dejo un GIF mostrando el funcionamiento del ecommerce.
 
 ![GIF Demo](GIF-EntregaFinal.gif)
 
