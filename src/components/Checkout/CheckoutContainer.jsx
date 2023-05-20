@@ -13,9 +13,10 @@ import { db } from "../../firebaseConfig";
 const CheckoutContainer = () => {
   const { cart, cartAmount, setCartEmpty } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const completePurchase = (data) => {
     let total = cartAmount();
-
+    setIsLoading(true);
     let order = {
       buyer: data,
       items: cart,
@@ -24,7 +25,10 @@ const CheckoutContainer = () => {
     };
     const ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, order)
-      .then((res) => setOrderId(res.id))
+      .then((res) => {
+        setOrderId(res.id);
+        setIsLoading(false);
+      })
       .catch((err) => console.log(err));
 
     cart.map((product) => {
@@ -42,6 +46,7 @@ const CheckoutContainer = () => {
       cartAmount={cartAmount}
       completePurchase={completePurchase}
       orderId={orderId}
+      isLoading={isLoading}
     />
   );
 };
