@@ -1,9 +1,15 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import { ErrorMessage } from "formik";
+
 import React from "react";
 import { Link } from "react-router-dom";
 
-const FormCheckout = ({ handleSubmit, handleChange, values, errors }) => {
+const FormCheckout = ({
+  handleSubmit,
+  handleChange,
+  values,
+  errors,
+  validation,
+}) => {
   return (
     <Box
       sx={{
@@ -79,8 +85,8 @@ const FormCheckout = ({ handleSubmit, handleChange, values, errors }) => {
           />
         )}
         <Box sx={{ display: "flex", justifyContent: "center", gap: 5 }}>
-          <Button type="submit" variant="contained">
-            Finalizar Compra
+          <Button type="submit" variant="contained" disabled={!validation}>
+            Confirmar Compra
           </Button>
 
           <Link to="/cart">

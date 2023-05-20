@@ -11,7 +11,8 @@ const counterStyles = {
   marginBottom: 20,
 };
 
-const Counter = ({ stock, onAdd, initial = 1 }) => {
+const Counter = ({ stock, onAdd, notDisabled, initial = 1 }) => {
+  stock === 0 && (initial = 0);
   const { counter, agregar, quitar, reset } = useCounter(initial);
   return (
     <Grid container>
@@ -34,14 +35,23 @@ const Counter = ({ stock, onAdd, initial = 1 }) => {
         </div>
       </Grid>
       <Grid item xs={12}>
-        <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            justifyContent: "center",
+            marginTop: 15,
+          }}
+        >
           <Button
             size="small"
             variant="contained"
+            disabled={!notDisabled}
             onClick={() => onAdd(counter)}
           >
             Agregar al carrito
           </Button>
+
           <Link to={`/`}>
             <Button size="small" variant="contained">
               Volver

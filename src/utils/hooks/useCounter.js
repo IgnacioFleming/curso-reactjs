@@ -6,7 +6,7 @@ const useCounter = (initial) => {
     counter < stock && setCounter(counter + 1);
   };
   const quitar = () => {
-    if (counter > 0) {
+    if (counter > 1) {
       setCounter(counter - 1);
     }
   };

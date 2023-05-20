@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Características del Proyecto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introducción
 
-## Available Scripts
+Este proyecto se trata de un ecommerce de artículos y equipamiento para oficina.
+Se trata de una tienda online que muestra al ingresar el listado de productos, con la posibilidad de ver el detalle de los mismos, agregar productos al carrito y realizar una compra.
 
-In the project directory, you can run:
+Para construir el Front de la aplicación utilicé la librería React JS inicializando el proyecto con el CLI Create React App.
 
-### `npm start`
+Para el BackEnd utilicé el servicio de Firebase, donde creé una base de datos ficticia para poder interactuar con la aplicación.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Cómo levantar el proyecto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Este proyecto puede levantarse localmente para poder interactuar con el mismo y realizar cambios.
 
-### `npm test`
+Para esto debes seguir los siguientes pasos:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ### Clonar el proyecto:
 
-### `npm run build`
+  Para clonar el proyecto debes instalar y abrir Git Bash en tu computadora, y pegar el siguiente comando:
+  `git clone https://github.com/IgnacioFleming/curso-reactjs`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ### Instalar dependencias:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  Para instalar las dependencias deberas abrir una terminal de consola y ejectuar:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  `npm install`
 
-### `npm run eject`
+- ### Levantar el proyecto localmente:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  Finalmente deberas ejecutar en la consola el siguiente comando:
+  `npm run start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  Y listo! El proyecto estará corriendo en localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Dependencias
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    Para este proyecto utilicé las siguientes librerías:
 
-## Learn More
+    - Material UI:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Esta librería es muy potente a la hora de estilar los distintos componentes del sitio.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Utilice la función createTheme para darle un formato personalizado a todo el sitio y que no quede el tema por defecto.
 
-### Code Splitting
+    - Firebase:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Instalé la librería de Firebase para poder conectar mi proyecto a mi propia Firestore y poder interactuar con el back end provisto por el mismo.
 
-### Analyzing the Bundle Size
+    - Formik y Yup:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Use estas dos librerías que son complementarias a la hora de manejar los formularios y realizar validaciones sobre el mismo.
 
-### Making a Progressive Web App
+    - React Icons:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    La utilice para el CartWidget y los botones del Counter.
 
-### Advanced Configuration
+    - React Loader Spinner:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    Implementé esta librería para poder mostrar un loader que ayude a la pagina a transicionar mejor a la hora de las peticiones al back end.
 
-### Deployment
+    - React Router Dom:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    Instale la misma para poder armar el enrutado del sitio.
 
-### `npm run build` fails to minify
+    - Sweet Alert 2:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    La usé para agregar un alert más estetico a la hora de agregar productos al carrito.
+
+## Demo
+
+    Les dejo un GIF mostrando el funcionamiento del ecommerce.
+
+![GIF Demo](GIF-EntregaFinal.gif)
+
+Muchas gracias!

@@ -1,6 +1,7 @@
 import {
   Avatar,
   Box,
+  Button,
   Divider,
   Grid,
   List,
@@ -11,9 +12,20 @@ import {
 } from "@mui/material";
 import React from "react";
 import FormCheckoutContainer from "../FormCheckout/FormCheckoutContainer";
+import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
-const Checkout = ({ cart, cartAmount, completePurchase, orderId }) => {
+const Checkout = ({
+  cart,
+  cartAmount,
+  completePurchase,
+  orderId,
+  isLoading,
+}) => {
   const total = cartAmount();
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <>
       {orderId ? (
@@ -37,6 +49,11 @@ const Checkout = ({ cart, cartAmount, completePurchase, orderId }) => {
             <strong> {orderId}</strong> .<br />
             <br /> <br /> Muchas gracias por elegirnos!!
           </Typography>
+          <Box sx={{ display: "flex", justifyContent: "center", marginTop: 5 }}>
+            <Link to="/">
+              <Button variant="contained">Volver al Inicio</Button>
+            </Link>
+          </Box>
         </Box>
       ) : (
         <div>

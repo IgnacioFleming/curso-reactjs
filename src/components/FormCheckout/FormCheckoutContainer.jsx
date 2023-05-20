@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import FormCheckout from "./FormCheckout";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const FormCheckoutContainer = ({ completePurchase }) => {
+  const [validation, setValidation] = useState(false);
   const { handleChange, handleSubmit, values, errors } = useFormik({
     initialValues: {
       nombre: "",
@@ -37,6 +38,19 @@ const FormCheckoutContainer = ({ completePurchase }) => {
 
     validateOnChange: false,
   });
+  useEffect(() => {
+    if (
+      !values.nombre ||
+      !values.apellido ||
+      !values.telefono ||
+      !values.email ||
+      !values.confirmarEmail
+    ) {
+      setValidation(false);
+    } else {
+      setValidation(true);
+    }
+  }, [values]);
 
   return (
     <FormCheckout
@@ -44,6 +58,7 @@ const FormCheckoutContainer = ({ completePurchase }) => {
       handleSubmit={handleSubmit}
       errors={errors}
       values={values}
+      validation={validation}
     />
   );
 };
